@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @Data
 @Builder
 public class OAuth2User {
-    private Integer oAuthe2UserId;
+    private Integer oAuth2UserId;
     private Integer userId;
     private String provider;
     private String providerUserId;
