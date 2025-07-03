@@ -34,7 +34,7 @@
         values (0, #{username}, #{password}, #{email}, now(), null)
     </insert>
 
-    <select id="getUserByUserId" resultMap="UserResult">
+    <select id="getUserByUserId" resultMap="UserResultMap">
         select
         ut.user_id,
         ut.username,
@@ -60,7 +60,7 @@
         ut.user_id = #{userId}
     </select>
 
-    <select id="getUserByUsername" resultMap="UserResult">
+    <select id="getUserByUsername" resultMap="UserResultMap">
         select
         ut.user_id,
         ut.username,
@@ -86,7 +86,7 @@
         ut.username = #{username}
     </select>
 
-    <select id="getUserByEmail" resultMap="UserResult">
+    <select id="getUserByEmail" resultMap="UserResultMap">
         select
         ut.user_id,
         ut.username,
