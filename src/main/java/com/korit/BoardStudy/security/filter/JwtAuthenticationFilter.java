@@ -12,16 +12,14 @@ import org.springframework.security.authentication.AuthenticationServiceExceptio
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.security.Security;
 import java.util.List;
 import java.util.Optional;
 
 @Component
-public class JwtAuthenticaionFilter implements Filter {
+public class JwtAuthenticationFilter implements Filter {
 
     @Autowired
     private JwtUtils jwtUtils;
