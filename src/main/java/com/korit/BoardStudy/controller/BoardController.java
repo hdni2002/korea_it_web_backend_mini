@@ -1,6 +1,7 @@
 package com.korit.BoardStudy.controller;
 
 import com.korit.BoardStudy.dto.board.AddBoardReqDto;
+import com.korit.BoardStudy.dto.board.UpdateBoardReqDto;
 import com.korit.BoardStudy.security.model.PrincipalUser;
 import com.korit.BoardStudy.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,16 @@ public class BoardController {
     @GetMapping("/list")
     public ResponseEntity<?> getBoardList(){
         return ResponseEntity.ok(boardService.getBoardList());
+    }
+
+    @PostMapping("/remove/{boardId}")
+    public ResponseEntity<?> removeBoardByBoardId(@PathVariable Integer boardId, @AuthenticationPrincipal PrincipalUser principalUser){
+        return ResponseEntity.ok(boardService.removeBoardByBoardId(boardId, principalUser));
+    }
+
+    @PostMapping("/update")
+    public ResponseEntity<?> updateBoardByBoardId(@RequestBody UpdateBoardReqDto updateBoardReqDto){
+        return ResponseEntity.ok(boardService.updateBoardByBoardId(updateBoardReqDto));
     }
 
 }
